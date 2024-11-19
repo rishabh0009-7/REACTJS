@@ -1,13 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
+import Dynamic from "./Dynamic";
+import Coursedetail from "./Coursedetail";
+
 
 const App = () => {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/home" element={<Home />} />
+         <Route path = "/courses" element = {<Dynamic/>}/>
+         <Route path = "/courses/:id" element = {<Coursedetail/>}/>
         </Routes>
       </Router>
     </>

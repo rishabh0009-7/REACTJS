@@ -1,0 +1,52 @@
+//dynamic routing and link--> dynamic routing hota hai jab jaise hum amazon mai koi product ekhet hai aur uspe click karta hai to dusra product page khul jataa hai vahii hai ye 
+
+import React from "react";
+import { Link } from "react-router-dom";
+
+const Dynamic = () => {
+  const arr = [
+    {
+      id: "MERN001",
+      course_name: "MERN_Stack",
+      price: 10000,
+      duration: "5 months",
+    },
+    {
+      id: "JAVA002",
+      course_name: "Java_Full_stack",
+      price: 15000,
+      duration: "5 months",
+    },
+    {
+      id: "PY0102",
+      course_name: "Python_Full_Stack",
+      price: 5000,
+      duration: "5 months",
+    },
+    {
+      id: "REACT99",
+      course_name: "React.JS",
+      price: 25000,
+      duration: "5 months",
+    },
+  ];
+  return (
+    <div>
+      <ul>
+        {arr.map((data) => (
+          <div key={data.id}>
+            <li key={data.id}>
+              <Link to={`/courses/${data.id}`}>{data.course_name}</Link>
+            </li>
+          </div>
+        ))}
+      </ul>
+    </div>
+  );
+};
+export default Dynamic;
+
+
+//path to ban gya hai par vo show nhi hogi puroi details uske liye hook padhna hoga kuch 
+// go to 15_routerhooks
+
